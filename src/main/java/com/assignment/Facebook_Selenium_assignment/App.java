@@ -11,6 +11,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 /**
  * Hello world!
@@ -18,7 +19,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class App {
     public static void main(String[] args) throws InterruptedException, IOException {
         System.out.println("Hello World!");
-		WebDriver driver = new ChromeDriver();
+		
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--headless");
+		WebDriver driver = new ChromeDriver(options);
+		
 		driver.get("https://www.facebook.com/");
 		driver.getTitle();
 		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(1000));
@@ -37,6 +42,7 @@ public class App {
 		File srcFile = screenshot.getScreenshotAs(OutputType.FILE);
 		File destFile = new File("/Temp/output_screenshot.jpg");
 		FileUtils.copyFile(srcFile, destFile);
+		System.out.println("Scripts Executed Successfully!");
 		driver.quit();
     }
 }

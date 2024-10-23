@@ -29,7 +29,7 @@ public class App {
 		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(1000));
 		WebElement email = driver.findElement(By.name("email"));
 		WebElement password = driver.findElement(
-				By.xpath("/html/body/div[1]/div[1]/div[1]/div/div/div/div[2]/div/div[1]/form/div[1]/div[2]/div/input"));
+				By.id("pass"));
 		WebElement loginButton = driver.findElement(By.cssSelector("button"));
 		Thread.sleep(5000);
 		email.sendKeys("shivangee123@gmail.com");

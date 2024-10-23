@@ -40,7 +40,7 @@ public class App {
 		Thread.sleep(5000);
 		TakesScreenshot screenshot = ((TakesScreenshot) driver);
 		File srcFile = screenshot.getScreenshotAs(OutputType.FILE);
-		File destFile = new File("/Temp/output_screenshot.jpg");
+		File destFile = new File("output_screenshot.jpg");
 		FileUtils.copyFile(srcFile, destFile);
 		System.out.println("Scripts Executed Successfully!");
 		driver.quit();
